@@ -4,3 +4,4 @@ channels_redis>=4.0
 daphne>=4.0
 asgiref>=3.0
 redis>=4.0
+djangorestframework
