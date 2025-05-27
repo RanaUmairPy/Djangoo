@@ -66,6 +66,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # should be as high as possible
+    # ... other middleware
+    "django.middleware.common.CommonMiddleware",
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
