@@ -50,12 +50,13 @@ ASGI_APPLICATION = 'backend.asgi.application'
 
 # Channels configuration
 import os
-x = ['REDIS_URL=redis://:6DW2jaEQ4pEo2o5fxBSlxc9rUo13hHwp@redis-19467.crce178.ap-east-1-1.ec2.redns.redis-cloud.com:19467']
+
+redis_url = os.environ.get('REDIS_URL')  # get the URL string only
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": x,
+            "hosts": [redis_url],  # must be a list of URL strings
         },
     },
 }
