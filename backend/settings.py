@@ -53,11 +53,11 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+            "hosts": [("redis-19467.crce178.ap-east-1-1.ec2.redns.redis-cloud.com", 19467)],
+            
         },
     },
 }
-
 
 import os
 MEDIA_URL = '/media/'
