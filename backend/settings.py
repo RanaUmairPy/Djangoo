@@ -51,16 +51,16 @@ ASGI_APPLICATION = 'backend.asgi.application'
 # Channels configuration
 import os
 
-redis_url = os.environ.get('REDIS_URL')  # get the URL string only
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [redis_url],  # must be a list of URL strings
+            "hosts": [
+                "rediss://:AaLAAAIjcDFkMWFjZDYxNjdlMTg0OGI5OTUzYzRjYzg3MmYxYmQ4YXAxMA@fine-kiwi-41664.upstash.io:6379"
+            ]
         },
     },
 }
-
 
 
 MEDIA_URL = '/media/'
