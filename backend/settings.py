@@ -49,17 +49,20 @@ ASGI_APPLICATION = 'backend.asgi.application'
 
 
 # Channels configuration
+import os
+
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("redis-19467.crce178.ap-east-1-1.ec2.redns.redis-cloud.com", 19467)],
-            
+            "hosts": [(os.getenv("REDIS_HOST"), int(os.getenv("REDIS_PORT")))],
+            #"password": os.getenv("REDIS_PASSWORD"),
         },
     },
 }
 
-import os
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
